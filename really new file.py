@@ -65,8 +65,7 @@ while True:
         else:
             line['timer'] += 1
         mouse_x, mouse_y = get_pos()
-        distance_to_mouse = dist((line['x'], line['y']), (mouse_x, mouse_y))
-        if distance_to_mouse < 100:
+        if dist((line['x'], line['y']), (mouse_x, mouse_y)) < 100:
             if temp > 50:
                 lines.remove(line)
             else:
@@ -76,4 +75,4 @@ while True:
             line['x'] += cos(angle_to_mouse) * 5
             line['y'] += sin(angle_to_mouse) * 5
     flip()
-    clock.tick(100)
+    clock.tick(60)
