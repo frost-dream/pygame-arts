@@ -38,22 +38,18 @@ while True:
                 x2 = other_line['x'] + other_line['timer'] // 5 * cos(other_line['angle'])
                 y2 = other_line['y'] + other_line['timer'] // 5 * sin(other_line['angle'])
                 if dist((line['x'], line['y']), (other_line['x'], other_line['y'])) < 50:
-                    alpha = min([120, line['timer']])
                     l(screen, (alpha, alpha, alpha), (line['x'], line['y']), (other_line['x'], other_line['y']), 1)
                     circle(screen, (alpha, alpha, alpha), (line['x'], line['y']), 2)
                     circle(screen, (alpha, alpha, alpha), (other_line['x'], other_line['y']), 2)
                 if dist((line['x'], line['y']), (x2, y2)) < 50:
-                    alpha = min([120, line['timer']])
                     l(screen, (alpha, alpha, alpha), (line['x'], line['y']), (x2, y2), 1)
                     circle(screen, (alpha, alpha, alpha), (line['x'], line['y']), 2)
                     circle(screen, (alpha, alpha, alpha), (x2, y2), 2)
                 if dist((x1, y1), (x2, y2)) < 50:
-                    alpha = min([120, line['timer']])
                     l(screen, (alpha, alpha, alpha), (x1, y1), (x2, y2), 1)
                     circle(screen, (alpha, alpha, alpha), (x1, y1), 2)
                     circle(screen, (alpha, alpha, alpha), (x2, y2), 2)
                 if dist((x1, y1), (other_line['x'], other_line['y'])) < 50:
-                    alpha = min([120, line['timer']])
                     l(screen, (alpha, alpha, alpha), (x1, y1), (other_line['x'], other_line['y']), 1)
                     circle(screen, (alpha, alpha, alpha), (x1, y1), 2)
                     circle(screen, (alpha, alpha, alpha), (other_line['x'], other_line['y']), 2)
@@ -80,4 +76,4 @@ while True:
             line['x'] += cos(angle_to_mouse) * 5
             line['y'] += sin(angle_to_mouse) * 5
     flip()
-    clock.tick(60)
+    clock.tick(100)
