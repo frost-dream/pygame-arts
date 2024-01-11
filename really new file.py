@@ -14,9 +14,8 @@ height = 700
 screen = set_mode((width, height))
 clock = Clock()
 while True:
-    for event in get():
-        if event.type == QUIT:
-            _exit(0)
+    for event in get(QUIT):
+        _exit(0)
     screen.fill((0, 0, 0))
     if random() < 0.07:
         lines.append({'x': randint(0, width),'y': randint(0, height), 'fade-out': False, 'angle': uniform(0, 2 * pi), 'timer': 1, 'rotation_speed': uniform(-0.01, 0.01)})
