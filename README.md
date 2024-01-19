@@ -1,4 +1,4 @@
-A magnet-like line art with python and pygame
+some arts with pygame
 
 required pygame:
 
