@@ -105,7 +105,7 @@ class GrassAssets:
     def __init__(self, path, gm):
         self.gm = gm
         self.blades = []
-        for blade in scandir(r'c:\Users\lenovo\Downloads\Compressed\pygame-grass-main\grass'):
+        for blade in scandir('grass'):
             img = pygame.image.load(blade.path).convert()
             img.set_colorkey((0, 0, 0))
             self.blades.append(img)
